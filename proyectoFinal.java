@@ -44,25 +44,25 @@ public class proyectoFinal {
         System.out.println("Para completar el registro, por favor facilitar la siguiente información:");
         System.out.println("----------------------------------------------");
         System.out.println("Tipo de identificación: ");
-        tipoIdentificacion = leerDatoTeclado.next();
+        tipoIdentificacion = leerDatoTeclado.nextLine();
         System.out.println("Documento de identificación: ");
-        documentoIdentificacion = leerDatoTeclado.next();
+        documentoIdentificacion = leerDatoTeclado.nextLine();
         System.out.println("Nombres: ");
-        nombres = leerDatoTeclado.next();
+        nombres = leerDatoTeclado.nextLine();
         System.out.println("Apellidos: ");
-        apellidos = leerDatoTeclado.next();
+        apellidos = leerDatoTeclado.nextLine();
         System.out.println("Correo electrónico: ");
-        correoElectronico = leerDatoTeclado.next();
+        correoElectronico = leerDatoTeclado.nextLine();
         System.out.println("Dirección de residencia: ");
-        direccionResidencia = leerDatoTeclado.next();
+        direccionResidencia = leerDatoTeclado.nextLine();
         System.out.println("Ciudad de residencia: ");
-        ciudadResidencia = leerDatoTeclado.next();
+        ciudadResidencia = leerDatoTeclado.nextLine();
         System.out.println("Teléfono de contacto: ");
-        telefono = leerDatoTeclado.next();
+        telefono = leerDatoTeclado.nextLine();
         System.out.println("Contraseña: ");
-        contraseña = leerDatoTeclado.next();
+        contraseña = leerDatoTeclado.nextLine();
         System.out.println("Confirmar contraseña: ");
-        confirmarContraseña = leerDatoTeclado.next();
+        confirmarContraseña = leerDatoTeclado.nextLine();
 
         while (!confirmarContraseña.equals(contraseña)){
             System.out.println("La contraseña es diferente... Vuelva a ingresar la contraseña");
@@ -129,6 +129,7 @@ public class proyectoFinal {
         System.out.println("3. Salir");
 
         int opcion = leerDatoTeclado.nextInt();
+        leerDatoTeclado.nextLine();
         switch(opcion){
             case 1:
                 solicitarDatosDeRegistro();
