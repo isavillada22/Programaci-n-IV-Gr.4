@@ -1,4 +1,4 @@
-package Paquete;
+package vista;
 
 import java.awt.EventQueue;
 
@@ -6,12 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -22,16 +17,17 @@ public class registrarUsuario extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textTipoDocumento;
-	private JTextField textDocumento;
-	private JTextField textNombres;
-	private JTextField textApellidos;
-	private JTextField textCorreo;
-	private JTextField textDireccion;
-	private JTextField textCiudad;
-	private JTextField textTelefono;
-	private JPasswordField passwordField;
-	private JPasswordField passwordFieldconfirmacion;
+	public JTextField textTipoDocumento;
+	public JTextField textDocumento;
+	public JTextField textNombres;
+	public JTextField textApellidos;
+	public JTextField textCorreo;
+	public JTextField textDireccion;
+	public JTextField textCiudad;
+	public JTextField textTelefono;
+	public JPasswordField passwordField;
+	public JPasswordField passwordFieldconfirmacion;
+	public JButton btnregistrar;
 
 	/**
 	 * Launch the application.
@@ -154,40 +150,8 @@ public class registrarUsuario extends JFrame {
 		textTelefono.setBounds(244, 354, 166, 28);
 		contentPane.add(textTelefono);
 		
-		JButton btnregistrar = new JButton("Registrar Usuario");
+		btnregistrar = new JButton("Registrar Usuario");
 		btnregistrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnregistrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String tipoIdentificacion = textTipoDocumento.getText();
-				String documentoIdentificacion = textDocumento.getText();
-				String nombres = textNombres.getText();
-				String apellidos = textApellidos.getText();
-				String correoElectronico = textCorreo.getText();
-				String direccionResidencia = textDireccion.getText();
-				String ciudadResidencia = textCiudad.getText();
-				String telefono = textTelefono.getText();
-				char[] contraseñaTemporal = passwordField.getPassword();
-				String contraseña = new String(contraseñaTemporal);
-				char[] confirmacionTemporal = passwordFieldconfirmacion.getPassword();
-				String confirmacion = new String(confirmacionTemporal);
-				
-				while (!confirmacion.equals(contraseña)){
-	                JOptionPane.showMessageDialog(null, "La contraseña no coincide con la confirmación. Por favor, inténtelo de nuevo.");
-	                contraseña = JOptionPane.showInputDialog(null, "Ingrese su contraseña:");
-	                confirmacion = JOptionPane.showInputDialog(null, "Confirme su contraseña:");
-		        }
-				String rol = "cliente";
-				Usuario usuario = new Usuario(tipoIdentificacion, documentoIdentificacion, nombres, apellidos, correoElectronico, 
-				        direccionResidencia, ciudadResidencia, telefono, contraseña, rol);
-				
-				Usuario.usuariosRegistrados.add(usuario);
-				
-				JOptionPane.showMessageDialog(null, "Usuario registrado satisfactoriamente");
-				dispose();
-				inicioSesion i = new inicioSesion();
-				i.setVisible(true);
-			}
-		});
 		btnregistrar.setBounds(130, 502, 137, 39);
 		contentPane.add(btnregistrar);
 		

@@ -13,118 +13,9 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JPasswordField;
-
-class Usuario {
-
-    static List<Usuario> usuariosRegistrados = new ArrayList<>();
-
-	String tipoIdentificacion, documentoIdentificacion, nombres, apellidos, 
-	correoElectronico, direccionResidencia, ciudadResidencia, telefono, contraseña, 
-	confirmarContraseña;
-	
-	public Usuario(){
-	}
-	
-	public Usuario(String tipoIdentificacion, String documentoIdentificacion, String nombres, 
-			String apellidos, String correoElectronico, String direccionResidencia, 
-			String ciudadResidencia, String telefono, String contraseña){
-		
-		this.tipoIdentificacion = tipoIdentificacion;
-		this.documentoIdentificacion = documentoIdentificacion;
-		this.nombres = nombres;
-		this.apellidos = apellidos;
-		this.correoElectronico = correoElectronico;
-		this.direccionResidencia = direccionResidencia;
-		this.ciudadResidencia = ciudadResidencia;
-		this.telefono = telefono;
-		this.contraseña = contraseña;
-	}
-
-	public String getTipoIdentificacion() {
-		return tipoIdentificacion;
-	}
-
-	public void setTipoIdentificacion(String tipoIdentificacion) {
-		this.tipoIdentificacion = tipoIdentificacion;
-	}
-
-	public String getDocumentoIdentificacion() {
-		return documentoIdentificacion;
-	}
-
-	public void setDocumentoIdentificacion(String documentoIdentificacion) {
-		this.documentoIdentificacion = documentoIdentificacion;
-	}
-
-	public String getNombres() {
-		return nombres;
-	}
-
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
-	}
-
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-
-	public String getCorreoElectronico() {
-		return correoElectronico;
-	}
-
-	public void setCorreoElectronico(String correoElectronico) {
-		this.correoElectronico = correoElectronico;
-	}
-
-	public String getDireccionResidencia() {
-		return direccionResidencia;
-	}
-
-	public void setDireccionResidencia(String direccionResidencia) {
-		this.direccionResidencia = direccionResidencia;
-	}
-
-	public String getCiudadResidencia() {
-		return ciudadResidencia;
-	}
-
-	public void setCiudadResidencia(String ciudadResidencia) {
-		this.ciudadResidencia = ciudadResidencia;
-	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getContraseña() {
-		return contraseña;
-	}
-
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
-	}
-
-	public String getConfirmarContraseña() {
-		return confirmarContraseña;
-	}
-
-	public void setConfirmarContraseña(String confirmarContraseña) {
-		this.confirmarContraseña = confirmarContraseña;
-	}
-}
 
 
 public class inicioSesion extends JFrame {
@@ -156,6 +47,7 @@ public class inicioSesion extends JFrame {
 	 * Create the frame.
 	 */
 	public inicioSesion() {
+		setTitle("Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -190,15 +82,17 @@ public class inicioSesion extends JFrame {
 		btningresar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btningresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Usuario administrador = new Usuario("isav","0822","administrador");
+				Usuario.usuariosRegistrados.add(administrador);
 				
 				String correo = textUsuario.getText();
 				char[] contraseñaTemporal = passwordField.getPassword();
 				String contraseña = new String(contraseñaTemporal);
 				boolean encontrado = false;
 		        int intentos = 0;
-
+		        
 		        while(!encontrado && intentos<3){
-		        	if(Usuario.usuariosRegistrados.size() == 0) {
+		        	if(Usuario.usuariosRegistrados.size() == 1 && !correo.equals("isav")) {
 						JOptionPane.showMessageDialog(null,"Por el momento no hay usuarios registrados");
 						break;
 					}
@@ -209,9 +103,15 @@ public class inicioSesion extends JFrame {
 		                if(usuario.correoElectronico.equals(correo)){
 		                    encontrado = true;
 
-		                    if (usuario.contraseña.equals(contraseña)){
+		                    if (usuario.contraseña.equals(contraseña) && usuario.rol == "cliente"){
 		                    	dispose();
-		                    	Salida s = new Salida();
+		                    	menuCliente s = new menuCliente();
+		                    	s.setVisible(true);		
+		                    	break;
+		                    }
+		                    else if(usuario.contraseña.equals(contraseña) && usuario.rol == "administrador") {
+		                    	dispose();
+		                    	menuAdministrador s = new menuAdministrador();
 		                    	s.setVisible(true);		
 		                    	break;
 		                    }
@@ -253,5 +153,15 @@ public class inicioSesion extends JFrame {
 		passwordField = new JPasswordField();
 		passwordField.setBounds(120, 154, 135, 30);
 		contentPane.add(passwordField);
+		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();		
+			}
+		});
+		btnSalir.setBounds(10, 212, 74, 30);
+		contentPane.add(btnSalir);
 	}
 }
