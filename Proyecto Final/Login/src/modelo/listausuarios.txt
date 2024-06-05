@@ -1,0 +1,3 @@
+cc	1088826489	Isabela	Villada Osorio	isav	Galicia	Pereira	3108327703	0822	administrador
+cc	33915994	Adriana Lorena	Osorio Montoya	adri	Galicia	Pereira	3147628647	2005	cliente
+CC	1039186286	Jose ARLES	Henao Garcia	junior	Galicia	Pereira	3143717606	1234	cliente

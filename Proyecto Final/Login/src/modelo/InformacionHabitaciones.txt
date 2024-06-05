@@ -1,0 +1,16 @@
+1	sencilla	2	100000	Cama doble, baño, televisor, aire acondicionado, artículos de aseo, closet	SI	 	 
+2	sencilla	2	100000	Cama doble, baño, televisor, aire acondicionado, artículos de aseo, closet	SI	 	 
+3	sencilla	2	100000	Cama doble, baño, televisor, aire acondicionado, artículos de aseo, closet	SI	 	 
+4	sencilla	2	100000	Cama doble, baño, televisor, aire acondicionado, artículos de aseo, closet	SI	 	 
+5	sencilla	2	150000	Cama doble, baño, televisor, aire acondicionado, nevera, artículos de aseo, caja fuerte, closet	SI	 	 
+6	sencilla	2	150000	Cama doble, baño, televisor, aire acondicionado, nevera, artículos de aseo, caja fuerte, closet	SI	 	 
+7	sencilla	2	150000	Cama doble, baño, televisor, aire acondicionado, nevera, artículos de aseo, caja fuerte, closet	SI	 	 
+8	sencilla	2	150000	Cama doble, baño, televisor, aire acondicionado, nevera, artículos de aseo, caja fuerte, closet	SI	 	 
+9	múltiple	5	250000	2 Camas dobles, 1 cama sencilla, baño, televisor, aire acondicionado, artículos de aseo, closet	SI	 	 
+10	múltiple	5	250000	2 Camas dobles, 1 cama sencilla, baño, televisor, aire acondicionado, artículos de aseo, closet	SI	 	 
+11	múltiple	5	250000	2 Camas dobles, 1 cama sencilla, baño, televisor, aire acondicionado, artículos de aseo, closet	SI	 	 
+12	múltiple	5	250000	2 Camas dobles, 1 cama sencilla, baño, televisor, aire acondicionado, artículos de aseo, closet	SI	 	 
+13	múltiple	5	300000	2 Camas dobles, 1 cama sencilla,baño, televisor, aire acondicionado, nevera, artículos de aseo, caja fuerte, closet	SI	 	 
+14	múltiple	5	300000	2 Camas dobles, 1 cama sencilla,baño, televisor, aire acondicionado, nevera, artículos de aseo, caja fuerte, closet	SI	 	 
+15	múltiple	5	300000	2 Camas dobles, 1 cama sencilla,baño, televisor, aire acondicionado, nevera, artículos de aseo, caja fuerte, closet	SI	 	 
+16	múltiple	5	300000	2 Camas dobles, 1 cama sencilla,baño, televisor, aire acondicionado, nevera, artículos de aseo, caja fuerte, closet	SI	 	 
